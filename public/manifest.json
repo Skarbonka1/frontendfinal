@@ -1,6 +1,6 @@
 {
-  "name": "Nazwa Twojej Aplikacji",
-  "short_name": "Krótka Nazwa",
+  "name": "Skarbonka",
+  "short_name": "Skarbonka",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
