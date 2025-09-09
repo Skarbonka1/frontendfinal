@@ -11,7 +11,7 @@ export default function TodayTasksView() {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedTaskContent, setSelectedTaskContent] = useState('');
 
-    const API_BASE_URL = 'https://serwer-for-render.onrender.com';
+    const API_BASE_URL = 'https://serwerfinal.onrender.com';
 
     // Nowa logika filtrowania zadań przypisanych do użytkownika
     useEffect(() => {
