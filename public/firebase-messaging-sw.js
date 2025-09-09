@@ -4,14 +4,13 @@ importScripts("https://www.gstatic.com/firebasejs/9.22.1/firebase-messaging-comp
 
 // Ten obiekt jest poprawny
 const firebaseConfig = {
-    apiKey: "AIzaSyDpEuaL4XizM242E7XZLpI5P2iYrmoGxyQ",
-    authDomain: "powiadomienia-strona-firmy.firebaseapp.com",
-    projectId: "powiadomienia-strona-firmy",
-    storageBucket: "powiadomienia-strona-firmy.firebasestorage.app",
-    messagingSenderId: "360455636841",
-    appId: "1:360455636841:web:66981a7810b153849f1ff8",
-    measurementId: "G-4WHBQ0BQJK"
-  };
+  apiKey: "AIzaSyCXhP15S7zXavrYJFWDxGkOZSGWep3pAsQ",
+  authDomain: "powiadomienia-strona-fir-a125c.firebaseapp.com",
+  projectId: "powiadomienia-strona-fir-a125c",
+  storageBucket: "powiadomienia-strona-fir-a125c.firebasestorage.app",
+  messagingSenderId: "842492443343",
+  appId: "1:842492443343:web:ec0b4851d94738faa355ba"
+};
 
 firebase.initializeApp(firebaseConfig);
 const messaging = firebase.messaging();
