@@ -33,10 +33,7 @@ export default function Dashboard() {
         <div className="user-info">
           <span>Zalogowano jako: <span className="username">{user.username} ({user.role})</span></span>
           
-          {/* Przycisk teraz wywołuje funkcję bezpośrednio z kontekstu */}
-          <button onClick={enableNotifications} className="btn btn-primary" style={{marginRight: '10px'}}>
-            Włącz Powiadomienia
-          </button>
+       
           
           <button onClick={logout} className="btn btn-secondary">Wyloguj</button>
         </div>
