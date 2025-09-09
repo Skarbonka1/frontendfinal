@@ -94,7 +94,7 @@ export const setupTokenRefresh = (userId) => {
     const handleVisibilityChange = async () => {
       if (!document.hidden && userId) {
         try {
-          const vapidKey = "BFr6_F0fqESHkNxesjiEJiiDt5nIkhRKkIiwsfSFuz9_wI58nhqmEhM8_8stPu-lqpW3oCr547gVaWnnnBMCoBg";
+          const vapidKey = "BJIfpE_9zRQjlNm_tCRIZHBzV_MRtnAzbw-H4dBrq6w9xxaE5DyZ3pdJGlVMDKQ2fKQjL5BjsHFGmOlkXBlCpaM";
           const currentToken = await getToken(messaging, { vapidKey });
           
           if (currentToken) {
