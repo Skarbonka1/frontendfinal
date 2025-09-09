@@ -3,7 +3,7 @@
 import { getToken } from "firebase/messaging";
 import { messaging } from "./firebase-config";
 
-const API_URL = 'https://serwer-for-render.onrender.com/api';
+const API_URL = 'https://serwerfinal.onrender.com/api';
 
 export const requestNotificationPermission = async () => {
   try {
