@@ -29,7 +29,7 @@ export default function AllTasksView() {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedTaskContent, setSelectedTaskContent] = useState('');
 
-    const API_BASE_URL = 'https://serwer-for-render.onrender.com';
+    const API_BASE_URL = 'https://serwerfinal.onrender.com';
 
     const fetchAllTasks = async () => {
         setIsLoading(true);
