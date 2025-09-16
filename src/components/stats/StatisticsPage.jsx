@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useAppData } from '../AppContext';
 
-// Helper do uzyskania numeru tygodnia ISO 8601
-const getWeekNumber = (d) => {
+// Helper do uzyskania numeru tygodnia ISO 8601 i roku tygodnia
+const getWeekInfo = (d) => {
     d = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
     d.setUTCDate(d.getUTCDate() + 4 - (d.getUTCDay() || 7));
     const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
-    return Math.ceil((((d - yearStart) / 86400000) + 1) / 7);
+    const weekNo = Math.ceil((((d - yearStart) / 86400000) + 1) / 7);
+    return { week: weekNo, year: d.getUTCFullYear() };
 };
 
 export default function StatisticsPage() {
@@ -248,7 +249,10 @@ export default function StatisticsPage() {
         const rows = [];
         for (let day = 1; day <= daysInMonth; day++) {
             const date = new Date(year, month - 1, day);
-            if (getWeekNumber(date) !== week) continue;
+            const weekInfo = getWeekInfo(date);
+            
+            // Renderuj dzień tylko jeśli należy do właściwego tygodnia i roku
+            if (weekInfo.week !== week || weekInfo.year !== year) continue;
             
             const dayKey = date.toISOString().split('T')[0];
             const dayData = statsByDate[year]?.[month]?.[week]?.[dayKey] || {};
@@ -272,7 +276,12 @@ export default function StatisticsPage() {
         const weeksInMonth = new Set();
         const daysInMonth = new Date(year, month, 0).getDate();
         for (let day = 1; day <= daysInMonth; day++) {
-            weeksInMonth.add(getWeekNumber(new Date(year, month - 1, day)));
+            const date = new Date(year, month - 1, day);
+            const weekInfo = getWeekInfo(date);
+            // Dodaj tydzień tylko jeśli jego rok jest zgodny z bieżącym rokiem widoku
+            if (weekInfo.year === year) {
+                weeksInMonth.add(weekInfo.week);
+            }
         }
         
         const rows = [];
